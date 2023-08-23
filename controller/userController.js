@@ -26,7 +26,7 @@ export const register = async (req, res,next) => {
     const { name,phoneNumber, password } = req.body;
 
     const user = await Users.findOne({ phoneNumber });
-    if(!user || !name || !password){
+     if(!phoneNumber || !name || !password){
       return res.status(400).json({success:false,message:"every field required"}) 
     }
 
